@@ -1,0 +1,11 @@
+{
+    "name": "julie/mvc",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Helper\\": "helpers/",
+            "Controller\\": "controllers/",
+            "Model\\": "models/"
+        }
+    }
+}
