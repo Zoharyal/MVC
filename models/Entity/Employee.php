@@ -47,7 +47,7 @@ class Employee
 
     public function setFirstname($firstname)
     {
-        $this->firstname = $firstname;
+        $this->firstName = $firstname;
     }
 
     public function getLastname()
@@ -57,7 +57,7 @@ class Employee
 
     public function setLastname($lastname)
     {
-        $this->lastname = $lastname;
+        $this->lastName = $lastname;
     }
 
     public function getRole()

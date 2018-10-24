@@ -22,8 +22,28 @@ class RouteController
         $emArray = $employeeRepo->findAll();
         var_dump($emArray);die;
     }
-    static public function employee() {
-        // $employee = new employeeController;
-        // $employee->getOne();
+    public function employee($id) {
+        $employeeRepo = $this->em->getRepository(Employee::class);
+        $employee = $employeeRepo->find($id);
+        var_dump($employee);
     }
+
+    public function delete($id) {
+        $entityManager = $this->em;
+        $employeeRepo = $entityManager->getRepository(Employee::class);
+        $employee = $employeeRepo->find($id);
+        $entityManager->remove($employee);
+        $entityManager->flush($employee);
+    }
+
+    public function create() {
+        // wait for form data
+        $newEmployee = new Employee();
+        $newEmployee->setFirstname("Testez5");
+        $newEmployee->setLastname("Allo");
+        $newEmployee->setRole("Collabo");
+        $this->em->persist($newEmployee);
+        $this->em->flush();
+    }
+
 }
