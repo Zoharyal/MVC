@@ -32,7 +32,13 @@ class RouteHelper
             // Output the correct view
             $controller = $parameters['controller'];
             $route = new RouteController;
-            $route::$controller();
+            // var_dump($parameters);die;
+            if ($parameters['_route'] === 'employees_placeholder') {
+                $id = $parameters['id'];
+                $route->$controller($id);
+            } else {
+                $route->$controller();
+            }
 
             exit;
         }

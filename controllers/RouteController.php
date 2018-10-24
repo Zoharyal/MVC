@@ -1,7 +1,6 @@
 <?php
 namespace Controller;
 use Controller\EmployeeController;
-require_once('config/entityManager.php');
 
 class RouteController
 {
@@ -9,11 +8,11 @@ class RouteController
         echo '<h1>This is home</h1>';
     }
     static public function employeesList() {
-        $employeeRepo = $entityManager->getRepository(Employee::class);
-        $emArray = $employeeRepo->findAll();
+        $employees = new EmployeeController;
+        $employees->getAll();
     }
-    static public function employee() {
+    static public function employee($id) {
         $employee = new employeeController;
-        $employee->getOne();
+        $employee->getOne($id);
     }
 }
