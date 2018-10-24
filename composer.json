@@ -1,6 +1,11 @@
 {
     "name": "julie/mvc",
-    "require": {},
+    "require": {
+        "symfony/routing": "^3.4",
+        "symfony/http-foundation": "^3.4",
+        "symfony/yaml": "^3.4",
+        "symfony/config": "^3.4"
+    },
     "autoload": {
         "psr-4": {
             "Helper\\": "helpers/",
