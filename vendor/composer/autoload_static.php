@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite59a8348f622193a2ee495b2bae6a680
+class ComposerStaticInit589dbd7cef6975a5e517400cacfd6490
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -22,7 +22,13 @@ class ComposerStaticInite59a8348f622193a2ee495b2bae6a680
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Filesystem\\' => 29,
+            'Symfony\\Component\\Debug\\' => 24,
+            'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Config\\' => 25,
+        ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
         ),
         'M' => 
         array (
@@ -31,6 +37,14 @@ class ComposerStaticInite59a8348f622193a2ee495b2bae6a680
         'H' => 
         array (
             'Helper\\' => 7,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Inflector\\' => 26,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
+            'Doctrine\\Common\\' => 16,
         ),
         'C' => 
         array (
@@ -67,9 +81,21 @@ class ComposerStaticInite59a8348f622193a2ee495b2bae6a680
         array (
             0 => __DIR__ . '/..' . '/symfony/filesystem',
         ),
+        'Symfony\\Component\\Debug\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
+        'Symfony\\Component\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/console',
+        ),
         'Symfony\\Component\\Config\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/config',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Model\\' => 
         array (
@@ -79,9 +105,51 @@ class ComposerStaticInite59a8348f622193a2ee495b2bae6a680
         array (
             0 => __DIR__ . '/../..' . '/helpers',
         ),
+        'Doctrine\\Instantiator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+        ),
         'Controller\\' => 
         array (
             0 => __DIR__ . '/../..' . '/controllers',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'D' => 
+        array (
+            'Doctrine\\ORM\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/orm/lib',
+            ),
+            'Doctrine\\DBAL\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/dbal/lib',
+            ),
+            'Doctrine\\Common\\Lexer\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
+            ),
+            'Doctrine\\Common\\Collections\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
         ),
     );
 
@@ -98,9 +166,10 @@ class ComposerStaticInite59a8348f622193a2ee495b2bae6a680
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite59a8348f622193a2ee495b2bae6a680::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite59a8348f622193a2ee495b2bae6a680::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInite59a8348f622193a2ee495b2bae6a680::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit589dbd7cef6975a5e517400cacfd6490::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit589dbd7cef6975a5e517400cacfd6490::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit589dbd7cef6975a5e517400cacfd6490::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit589dbd7cef6975a5e517400cacfd6490::$classMap;
 
         }, null, ClassLoader::class);
     }

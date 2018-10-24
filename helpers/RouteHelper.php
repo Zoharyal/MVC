@@ -32,7 +32,7 @@ class RouteHelper
             // Output the correct view
             $controller = $parameters['controller'];
             $route = new RouteController;
-            $route::$controller();
+            $route->$controller();
 
             exit;
         }
