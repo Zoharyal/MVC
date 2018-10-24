@@ -1,5 +1,12 @@
 # routes.yaml
 home:
-    path: /home
+    path:     /home
+    defaults: { controller: 'home' }
 employees:
-    path: /employees
+    path:     /employees
+    defaults: { controller: 'employeesList' }
+employees_placeholder:
+    path:     /employees/{id}
+    defaults: { controller: 'employee' }
+    requirements:
+        id: '[0-9]+'

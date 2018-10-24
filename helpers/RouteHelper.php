@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Routing\Loader\YamlFileLoader;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use \Controller\ViewController as ViewController;
+use Controller\RouteController as RouteController;
 
 class RouteHelper
 {
@@ -28,11 +28,12 @@ class RouteHelper
         
             // Find the current route
             $parameters = $matcher->match($context->getPathInfo());
-            $url = $parameters["_route"];
+        
+            // Output the correct view
+            $controller = $parameters['controller'];
+            $route = new RouteController;
+            $route::$controller();
 
-            // Search the correct view
-            $viewController = new ViewController();
-            $viewController::getView($url);
             exit;
         }
         catch (ResourceNotFoundException $e) {
