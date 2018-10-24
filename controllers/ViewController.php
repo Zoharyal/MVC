@@ -1,13 +1,19 @@
 <?php
 namespace Controller;
 
+use Model\Entity\Employee;
+
 class ViewController
 {
     public function getView($url) {
         if ($url === 'home') {
             echo 'This is Home';
-        } else if ($url === 'employees') {
-            echo 'This is the employees\' list';
+        } 
+    }
+
+    public function display($url) {
+        if ($url === 'employees') {
+            echo 'TEST';
         }
     }
 }
